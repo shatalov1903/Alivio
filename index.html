@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,6 +24,7 @@
     <div class="wrapper">
       <header class="header">
         <div class="container header__container">
+          <input id="menuCheckbox" type="checkbox" />
           <a href="/" class="header__logo">
             <img src="img/logo.svg" alt="Alivio" />
           </a>
@@ -40,8 +46,11 @@
           </nav>
           <div class="header__btn">
             <a href="/" class="btn btn_link">Sign in</a>
-            <a href="/" class="btn btn_primary">Start Trial</a>
+            <a href="/" class="btn btn_primary btn-menu">Start Trial</a>
           </div>
+          <label for="menuCheckbox" class="menu-burger"
+            ><span class="material-icons icon-menu">menu</span></label
+          >
         </div>
       </header>
       <section class="main">

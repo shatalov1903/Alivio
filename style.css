@@ -331,3 +331,148 @@ body {
   font-size: 25px;
   font-weight: 600;
 }
+
+.icon-menu {
+  color: var(--color-text);
+  font-size: 40px;
+  display: none;
+}
+
+.menu-burger {
+  display: none;
+}
+
+#menuCheckbox {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .main {
+    position: static;
+  }
+  .main__img {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 20px;
+  }
+  .footer__container {
+    padding: 70px 20px;
+  }
+  .menu-burger {
+    display: flex;
+  }
+  .icon-menu {
+    display: inline-block;
+  }
+  .header__nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 60px;
+    height: 100%;
+    background: #333;
+    transform: translateX(-110%);
+    transition: 0.2s all ease-in-out;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+  }
+  #menuCheckbox:checked ~ .header__nav {
+    transform: translateX(0);
+    visibility: initial;
+    pointer-events: initial;
+    opacity: 1;
+  }
+  .header__ul {
+    flex-direction: column;
+  }
+  .header__a {
+    color: var(--color-add);
+  }
+  .header__btn {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 60px;
+    height: 100%;
+    background: #333;
+    transform: translateX(-110%);
+    transition: 0.2s all ease-in-out;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+  }
+  #menuCheckbox:checked ~ .header__btn {
+    transform: translateX(0);
+    visibility: initial;
+    pointer-events: initial;
+    opacity: 1;
+  }
+  .btn_link,
+  .btn-menu {
+    color: var(--color-add);
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  .main__container,
+  .story__container {
+    flex-direction: column-reverse;
+  }
+  .story {
+    margin-top: 140px;
+  }
+  .story__img {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer__container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .footer__ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .step-header {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "title"
+      "slogan"
+      "desc";
+    gap: 30px;
+  }
+  .product__container {
+    flex-direction: column;
+    margin-bottom: 130px;
+  }
+  .footer__logo {
+    font-size: 30px;
+  }
+  .footer__a {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main__title,
+  .step-header__slogan,
+  .story__title,
+  .product__slogan {
+    font-size: 40px;
+  }
+  .step-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
