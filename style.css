@@ -55,6 +55,11 @@ body {
   flex-shrink: 0;
 }
 
+.header__nav {
+  display: flex;
+  gap: 230px;
+}
+
 .header__ul {
   display: flex;
   align-items: center;
@@ -221,6 +226,7 @@ body {
   display: flex;
   align-items: center;
   gap: 31px;
+  padding: 0 10px;
 }
 
 .story__title {
@@ -347,6 +353,12 @@ body {
 }
 
 @media screen and (max-width: 1300px) {
+  .header__nav {
+    gap: 100px;
+  }
+  .header__ul {
+    gap: 45px;
+  }
   .main {
     position: static;
   }
@@ -355,20 +367,23 @@ body {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
   .container {
     padding: 20px;
   }
-  .footer__container {
-    padding: 70px 20px;
-  }
   .menu-burger {
     display: flex;
+    border: 1px solid var(--color-desc);
+    border-radius: 6px;
+    padding: 6px;
   }
   .icon-menu {
     display: inline-block;
   }
   .header__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     left: 0;
     top: 0;
@@ -394,25 +409,7 @@ body {
     color: var(--color-add);
   }
   .header__btn {
-    display: flex;
     flex-direction: column;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 60px;
-    height: 100%;
-    background: #333;
-    transform: translateX(-110%);
-    transition: 0.2s all ease-in-out;
-    visibility: hidden;
-    pointer-events: none;
-    opacity: 0;
-  }
-  #menuCheckbox:checked ~ .header__btn {
-    transform: translateX(0);
-    visibility: initial;
-    pointer-events: initial;
-    opacity: 1;
   }
   .btn_link,
   .btn-menu {
@@ -421,7 +418,6 @@ body {
     border: 0;
     background: transparent;
   }
-  .main__container,
   .story__container {
     flex-direction: column-reverse;
   }
@@ -429,11 +425,21 @@ body {
     margin-top: 140px;
   }
   .story__img {
+    margin-top: 100px;
     margin-bottom: 40px;
+  }
+  .story__btn {
+    margin-bottom: 100px;
+  }
+  .footer__container {
+    padding: 70px 40px;
   }
 }
 
 @media screen and (max-width: 992px) {
+  .main__container {
+    flex-direction: column-reverse;
+  }
   .footer__container {
     flex-direction: column;
     gap: 50px;
@@ -468,9 +474,11 @@ body {
 @media screen and (max-width: 576px) {
   .main__title,
   .step-header__slogan,
-  .story__title,
   .product__slogan {
     font-size: 40px;
+  }
+  .story__title {
+    font-size: 30px;
   }
   .step-list {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
